@@ -33,7 +33,10 @@ public class Hotel {
 		lightSubCorridor2.turnOn();
 		acSubCorridor2.turnOn();
 		
+		Map<Integer, Operations> mainCorridors = new HashMap<>();
 		Corridor mainCorridor = new MainCorridor(lightMainCorridor, acMainCorridor);
+		mainCorridors.put(1, mainCorridor);
+		
 		Corridor subCorridor1 = new SubCorridor(lightSubCorridor1, acSubCorridor1);
 		Corridor subCorridor2 = new SubCorridor(lightSubCorridor2, acSubCorridor2);
 		
@@ -42,7 +45,7 @@ public class Hotel {
 		subCorridors.put(2, subCorridor2);
 		
 		// First Floor
-		Floor floor1 = new Floor(mainCorridor, subCorridors);
+		Floor floor1 = new Floor(mainCorridors, subCorridors);
 		floors.put(1, floor1);
 		
 		floors.forEach((k,v) -> {
