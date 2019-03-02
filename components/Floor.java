@@ -30,25 +30,25 @@ public class Floor implements Status<String, Integer> {
 	public String getStatus(Integer floorNo) {
 		String status = String.format("Floor %d  \n", floorNo);
 		
-		status = setArgumentsAndFormat(status, mainCorridors, "Main");
-		status = setArgumentsAndFormat(status, subCorridors, "Sub");
+		status = setArgumentsAndFormat(status, mainCorridors, Constants.MAIN);
+		status = setArgumentsAndFormat(status, subCorridors, Constants.SUB);
 		
 		return status;
 	}
 
 	@Override
 	public String onOrOffStatus(Boolean status) {		
-		return status.equals(true) ? "ON" : "OFF";
+		return status.equals(true) ? Constants.ON : Constants.OFF;
 	}
 	
 	private String setArgumentsAndFormat(String status, Map<Integer, Operations> corridors, String type) {
 		Map<String, Object> corridorParameters = new HashMap<>();
 		for (Map.Entry<Integer, Operations> corridor : corridors.entrySet())
 		{
-			corridorParameters.put("type", type);
-			corridorParameters.put("corridorNo", corridor.getKey());
-			corridorParameters.put("lightStatus", onOrOffStatus(corridor.getValue().lightState()));
-			corridorParameters.put("acStatus", onOrOffStatus(corridor.getValue().acState()));
+			corridorParameters.put(Constants.TYPE, type);
+			corridorParameters.put(Constants.CORRIDOR_NO, corridor.getKey());
+			corridorParameters.put(Constants.LIGHT_STATUS, onOrOffStatus(corridor.getValue().lightState()));
+			corridorParameters.put(Constants.AC_STATUS, onOrOffStatus(corridor.getValue().acState()));
 			status = getFormattedMessages(status, corridorParameters); 
 		}
 		
@@ -57,11 +57,11 @@ public class Floor implements Status<String, Integer> {
 	
 	private String getFormattedMessages(String status, Map<String, Object> options) {
 		status += String.format("%s Corridor %d Light %d : %s AC : %s \n", 
-								 options.get("type").toString(),
-								 Integer.valueOf(options.get("corridorNo").toString()),
-								 Integer.valueOf(options.get("corridorNo").toString()),
-								 options.get("lightStatus").toString(),
-								 options.get("acStatus").toString()
+								 options.get(Constants.TYPE).toString(),
+								 Integer.valueOf(options.get(Constants.CORRIDOR_NO).toString()),
+								 Integer.valueOf(options.get(Constants.CORRIDOR_NO).toString()),
+								 options.get(Constants.LIGHT_STATUS).toString(),
+								 options.get(Constants.AC_STATUS).toString()
 				               );
 		return status;
 	}
