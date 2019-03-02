@@ -13,17 +13,25 @@ public abstract class Corridor implements Operations {
 	public void lightOn() {
 		light.turnOn();
 	}
-	
+
 	public void lightOff() {
 		light.turnOff();
+	}
+
+	public Boolean lightState() {
+		return light.getState();
 	}
 
 	public void acOn() {
 		ac.turnOn();
 	}
-	
+
 	public void acOff() {
 		ac.turnOff();
+	}
+
+	public Boolean acState() {
+		return ac.getState();
 	}
 
 }

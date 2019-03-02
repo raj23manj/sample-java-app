@@ -5,4 +5,6 @@ public interface Operations {
 	public void lightOff();
 	public void acOn();	
 	public void acOff();
+	public Boolean lightState();
+	public Boolean acState();
 }

@@ -30,26 +30,25 @@ public class Floor implements Status<String, Integer> {
 	public String getStatus(Integer floorNo) {
 		String status = String.format("Floor %d  \n", floorNo);
 		
-		status = setArgumentsAndFormat(status, mainCorridors);
-		status = setArgumentsAndFormat(status, subCorridors);
+		status = setArgumentsAndFormat(status, mainCorridors, "Main");
+		status = setArgumentsAndFormat(status, subCorridors, "Sub");
 		
 		return status;
 	}
 
 	@Override
-	public String onOrOffStatus(Boolean status) {
-		
-		return null;
+	public String onOrOffStatus(Boolean status) {		
+		return status.equals(true) ? "ON" : "OFF";
 	}
 	
-	private String setArgumentsAndFormat(String status, Map<Integer, Operations> corridors) {
+	private String setArgumentsAndFormat(String status, Map<Integer, Operations> corridors, String type) {
 		Map<String, Object> corridorParameters = new HashMap<>();
 		for (Map.Entry<Integer, Operations> corridor : corridors.entrySet())
 		{
-			corridorParameters.put("type", "Main");
+			corridorParameters.put("type", type);
 			corridorParameters.put("corridorNo", corridor.getKey());
-			corridorParameters.put("lightStatus", "ON");
-			corridorParameters.put("acStatus", "ON");
+			corridorParameters.put("lightStatus", onOrOffStatus(corridor.getValue().lightState()));
+			corridorParameters.put("acStatus", onOrOffStatus(corridor.getValue().acState()));
 			status = getFormattedMessages(status, corridorParameters); 
 		}
 		
