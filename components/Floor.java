@@ -28,30 +28,10 @@ public class Floor implements Status<String, Integer> {
 
 	@Override
 	public String getStatus(Integer floorNo) {
-		
-		Map<String, Object> corridorParametersMain = new HashMap<>();
-		Map<String, Object> corridorParametersSub = new HashMap<>();
 		String status = String.format("Floor %d  \n", floorNo);
 		
-		for (Map.Entry<Integer, Operations> mainCorridor : mainCorridors.entrySet())
-		{
-			corridorParametersMain.put("type", "Main");
-			corridorParametersMain.put("corridorNo", mainCorridor.getKey());
-			corridorParametersMain.put("lightStatus", "ON");
-			corridorParametersMain.put("acStatus", "ON");
-			status = getFormattedMessages(status, corridorParametersMain);
-			 
-		}
-		
-		for (Map.Entry<Integer, Operations> subCorridor : subCorridors.entrySet())
-		{
-
-			corridorParametersSub.put("type", "Sub");
-			corridorParametersSub.put("corridorNo", subCorridor.getKey());
-			corridorParametersSub.put("lightStatus", "ON");
-			corridorParametersSub.put("acStatus", "ON");
-			status = getFormattedMessages(status, corridorParametersSub);
-		}
+		status = setArgumentsAndFormat(status, mainCorridors);
+		status = setArgumentsAndFormat(status, subCorridors);
 		
 		return status;
 	}
@@ -60,6 +40,20 @@ public class Floor implements Status<String, Integer> {
 	public String onOrOffStatus(Boolean status) {
 		
 		return null;
+	}
+	
+	private String setArgumentsAndFormat(String status, Map<Integer, Operations> corridors) {
+		Map<String, Object> corridorParameters = new HashMap<>();
+		for (Map.Entry<Integer, Operations> corridor : corridors.entrySet())
+		{
+			corridorParameters.put("type", "Main");
+			corridorParameters.put("corridorNo", corridor.getKey());
+			corridorParameters.put("lightStatus", "ON");
+			corridorParameters.put("acStatus", "ON");
+			status = getFormattedMessages(status, corridorParameters); 
+		}
+		
+		return status;
 	}
 	
 	private String getFormattedMessages(String status, Map<String, Object> options) {
@@ -72,5 +66,5 @@ public class Floor implements Status<String, Integer> {
 				               );
 		return status;
 	}
-
+	
 }
