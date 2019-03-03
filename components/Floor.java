@@ -10,11 +10,11 @@ public class Floor implements Status<String, Integer> {
 	private Map<String, Object> completeFloor = new HashMap<String, Object>();
 	private Formatter formatter;
 
-	public Floor(Map<Integer, Operatable> mainCorridor, Map<Integer, Operatable> subCorridors, Formatter formatter) {
+	public Floor(Map<Integer, Operatable> mainCorridors, Map<Integer, Operatable> subCorridors, Formatter formatter) {
 		super();
-		this.mainCorridors = mainCorridor;
+		this.mainCorridors = mainCorridors;
 		this.subCorridors = subCorridors;
-		this.completeFloor.put(Constants.MAIN_CORRIDOR, mainCorridor);
+		this.completeFloor.put(Constants.MAIN_CORRIDOR, mainCorridors);
 		this.completeFloor.put(Constants.SUB_CORRIDOR, subCorridors);	
 		this.formatter = formatter;
 	}
