@@ -5,34 +5,31 @@ import java.util.Map;
 
 public class Floor implements Status<String, Integer> {
 
-	private Map<Integer, Operations> mainCorridors;
-	private Map<Integer, Operations> subCorridors;
-	private Map<String, Object> completeFloor = new HashMap<String, Object>();;
+	private Map<Integer, Operatable> mainCorridors;
+	private Map<Integer, Operatable> subCorridors;
+	private Map<String, Object> completeFloor = new HashMap<String, Object>();
 
-	public Floor(Map<Integer, Operations> mainCorridor, Map<Integer, Operations> subCorridors) {
+	public Floor(Map<Integer, Operatable> mainCorridor, Map<Integer, Operatable> subCorridors) {
 		super();
 		this.mainCorridors = mainCorridor;
 		this.subCorridors = subCorridors;
 		this.completeFloor.put(Constants.MAIN_CORRIDOR, mainCorridor);
-		this.completeFloor.put(Constants.SUB_CORRIDOR, subCorridors);
-		
+		this.completeFloor.put(Constants.SUB_CORRIDOR, subCorridors);	
 	}
 
-	public Map<Integer, Operations> getMainCorridor() {
+	public Map<Integer, Operatable> getMainCorridor() {
 		return mainCorridors;
 	}
 
-	public Map<Integer, Operations> getSubCorridors() {
+	public Map<Integer, Operatable> getSubCorridors() {
 		return subCorridors;
 	}
 
 	@Override
 	public String getStatus(Integer floorNo) {
-		String status = String.format("Floor %d  \n", floorNo);
-		
+		String status = String.format(Constants.MESSAGE_1, floorNo);		
 		status = setArgumentsAndFormat(status, mainCorridors, Constants.MAIN);
-		status = setArgumentsAndFormat(status, subCorridors, Constants.SUB);
-		
+		status = setArgumentsAndFormat(status, subCorridors, Constants.SUB);		
 		return status;
 	}
 
@@ -41,9 +38,9 @@ public class Floor implements Status<String, Integer> {
 		return status.equals(true) ? Constants.ON : Constants.OFF;
 	}
 	
-	private String setArgumentsAndFormat(String status, Map<Integer, Operations> corridors, String type) {
+	private String setArgumentsAndFormat(String status, Map<Integer, Operatable> corridors, String type) {
 		Map<String, Object> corridorParameters = new HashMap<>();
-		for (Map.Entry<Integer, Operations> corridor : corridors.entrySet())
+		for (Map.Entry<Integer, Operatable> corridor : corridors.entrySet())
 		{
 			corridorParameters.put(Constants.TYPE, type);
 			corridorParameters.put(Constants.CORRIDOR_NO, corridor.getKey());
@@ -56,7 +53,7 @@ public class Floor implements Status<String, Integer> {
 	}
 	
 	private String getFormattedMessages(String status, Map<String, Object> options) {
-		status += String.format("%s Corridor %d Light %d : %s AC : %s \n", 
+		status += String.format(Constants.MESSAGE_2, 
 								 options.get(Constants.TYPE).toString(),
 								 Integer.valueOf(options.get(Constants.CORRIDOR_NO).toString()),
 								 Integer.valueOf(options.get(Constants.CORRIDOR_NO).toString()),

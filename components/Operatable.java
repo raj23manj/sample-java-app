@@ -1,6 +1,6 @@
 package components;
 
-public interface Operations {
+public interface Operatable {
 	public void lightOn();
 	public void lightOff();
 	public void acOn();	

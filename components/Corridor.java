@@ -1,6 +1,6 @@
 package components;
 
-public abstract class Corridor implements Operations {
+public abstract class Corridor implements Operatable {
 	protected Switchable light;
 	protected Switchable ac;
 

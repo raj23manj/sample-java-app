@@ -7,7 +7,7 @@ import components.Device;
 import components.Floor;
 import components.Light;
 import components.MainCorridor;
-import components.Operations;
+import components.Operatable;
 import components.SubCorridor;
 
 public class Hotel {
@@ -33,14 +33,14 @@ public class Hotel {
 		lightSubCorridor2.turnOn();
 		acSubCorridor2.turnOn();
 		
-		Map<Integer, Operations> mainCorridors = new HashMap<>();
+		Map<Integer, Operatable> mainCorridors = new HashMap<>();
 		Corridor mainCorridor = new MainCorridor(lightMainCorridor, acMainCorridor);
 		mainCorridors.put(1, mainCorridor);
 		
 		Corridor subCorridor1 = new SubCorridor(lightSubCorridor1, acSubCorridor1);
 		Corridor subCorridor2 = new SubCorridor(lightSubCorridor2, acSubCorridor2);
 		
-		Map<Integer, Operations> subCorridors = new HashMap<>();
+		Map<Integer, Operatable> subCorridors = new HashMap<>();
 		subCorridors.put(1, subCorridor1);
 		subCorridors.put(2, subCorridor2);
 		
