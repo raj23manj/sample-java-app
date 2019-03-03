@@ -1,0 +1,7 @@
+InputFormat
+    Assumptions Made:
+    	1) Always the first line of the input will be entire hotel initialization with floors, Main and Sub Corridors
+    	2) Rest Followed after this will be inputs from motion detector
+
+	Hotel Building Initialization:
+		Floor | MainCorridor | SubCorridor

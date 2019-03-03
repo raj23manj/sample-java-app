@@ -34,6 +34,7 @@ public class Controller {
 	private Map<Integer, Operatable> intializeCorridors(Integer corridorCount) {
 		Map<Integer, Operatable> corridors = new HashMap<>();
 		for(Integer j=1; j<=corridorCount; j++) {
+			
 			Device lightCorridor = new Light();
 			Device acCorridor = new AC();
 
