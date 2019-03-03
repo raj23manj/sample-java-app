@@ -7,15 +7,15 @@ public class Floor implements Status<String, Integer> {
 
 	private Map<Integer, Operatable> mainCorridors;
 	private Map<Integer, Operatable> subCorridors;
-	private Map<String, Object> completeFloor = new HashMap<String, Object>();
+	private Map<String, Map<Integer, Operatable>> completeFloor = new HashMap<>();
 	private Formatter formatter;
 
 	public Floor(Map<Integer, Operatable> mainCorridors, Map<Integer, Operatable> subCorridors, Formatter formatter) {
 		super();
 		this.mainCorridors = mainCorridors;
 		this.subCorridors = subCorridors;
-		this.completeFloor.put(Constants.MAIN_CORRIDOR, mainCorridors);
-		this.completeFloor.put(Constants.SUB_CORRIDOR, subCorridors);	
+		this.completeFloor.put(Constants.MAIN, mainCorridors);
+		this.completeFloor.put(Constants.SUB, subCorridors);	
 		this.formatter = formatter;
 	}
 
@@ -26,4 +26,9 @@ public class Floor implements Status<String, Integer> {
 		status = formatter.setArgumentsAndFormat(status, subCorridors, Constants.SUB);		
 		return status;
 	}
+
+	public  Map<Integer, Operatable> getCorridor(String type) {
+		return this.completeFloor.get(type);
+	}
+	
 }
