@@ -10,26 +10,22 @@ public class FileReader {
 	public List<String> readFile() {
 
 		List<String> inputs = new ArrayList<>();
-
+		// get current relative path
 		Path currentRelativePath = Paths.get("");
 		String s = currentRelativePath.toAbsolutePath().toString();
-		System.out.println("Current relative path is: " + s + "\n");
-
+		// file to be read
 		File file = new File(s + "/input.txt");
 		Scanner sc = null;
 		try {
 			sc = new Scanner(file);
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
+		// reading file lines
 		while (sc.hasNextLine()) {
 			String readValue = sc.nextLine();
-			System.out.println( readValue + "\n");
 			inputs.add(readValue);
 		}
-		
 		return inputs;
 	}
 }

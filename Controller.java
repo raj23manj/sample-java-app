@@ -12,12 +12,14 @@ import components.Message;
 import components.Operatable;
 
 public class Controller {
-	public Map<Integer, Floor> initialize() {
+	public Map<Integer, Floor> initialize(String input) {
 		Map<Integer, Floor> floors = new HashMap<>();
-
-		Integer floorsCnt = 2;
-		Integer mainCorridorCnt = 1;
-		Integer subCorridorCnt = 2;
+		
+		String[] inputArr = input.split(" - ");
+		
+		Integer floorsCnt = Integer.valueOf(inputArr[0]);
+		Integer mainCorridorCnt = Integer.valueOf(inputArr[1]);
+		Integer subCorridorCnt = Integer.valueOf(inputArr[2]);
 		
 		for(Integer i=1; i<=floorsCnt; i++) {		
 			Map<Integer, Operatable> mainCorridors = this.intializeCorridors(mainCorridorCnt);
