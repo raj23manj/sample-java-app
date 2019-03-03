@@ -65,7 +65,6 @@ public class Controller {
 			// get which corridor
 			currentCorridor = corridors.get(corridorNumber);
 			currentCorridor.lightOff();
-
 		}
 
 		return floors;
