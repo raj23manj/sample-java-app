@@ -22,4 +22,11 @@ public final class Constants {
 	// states
 	public final static String ON="ON";
 	public final static String OFF="OFF";
+	
+	// power consumption calculation related
+	public final static Integer AC_CONSUMES = 10;
+	public final static Integer LIGHT_CONSUMES = 5;
+	public final static Integer MAIN_CORRIDOR_CALC = 15;
+	public final static Integer SUB_CORRIDOR_CALC = 10;
+	public final static Integer DEFAULT_CONSUMPTION = 0;
 }

@@ -35,4 +35,31 @@ public class Floor implements Status<String, Integer> {
 		return this.completeFloor.get(type);
 	}
 	
+	public Integer totalPowerConsumed(Integer floorNumber) {
+		Integer totalConsumption = 0;
+		
+		for(Map.Entry<Integer, Operatable> corridor : mainCorridors.entrySet()) {
+			totalConsumption += corridor.getValue().devicePowerConsumption();
+		}
+		
+		for(Map.Entry<Integer, Operatable> corridor : subCorridors.entrySet()) {
+			totalConsumption += corridor.getValue().devicePowerConsumption();
+		}
+		
+		System.out.println("total power Consumed on floor" + floorNumber + " : " + totalConsumption + "\n");
+		
+		checkConsumptionExceeded(totalConsumption);
+		
+		return totalConsumption;
+	}
+	
+	private void checkConsumptionExceeded(Integer consumed) {
+		Integer mainCorridor = (mainCorridors.size() * Constants.MAIN_CORRIDOR_CALC);
+		Integer subCorridor = (subCorridors.size() * Constants.SUB_CORRIDOR_CALC);
+		Integer total = mainCorridor + subCorridor;
+		
+		if(consumed > total) {
+			System.out.println("Power Consumed on this floor is Over the speicifed Units of " + total + "\n");
+		}
+	}
 }

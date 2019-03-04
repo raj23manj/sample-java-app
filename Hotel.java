@@ -4,10 +4,12 @@ import java.util.Map;
 import components.Controller;
 import floors.Floor;
 import utils.FileReader;
+import utils.PowerConsumption;
 
 public class Hotel {
 	public static void main(String args[]) {
 		Controller ctrl = new Controller();
+		PowerConsumption powerConsumption = new PowerConsumption();
 
 		FileReader fileReader = new FileReader();
 		Map<Integer, Floor> floors = null;
@@ -25,6 +27,7 @@ public class Hotel {
 				floors = ctrl.updateStates(inputs.get(i), floors);
 			}
 			ctrl.displayFloorStatus(floors);
+			powerConsumption.calculatePowerConsumption(floors);
 			System.out.println("####################################" + "\n");
 		}
 	}

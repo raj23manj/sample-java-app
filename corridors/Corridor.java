@@ -1,16 +1,22 @@
 package corridors;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import devices.Switchable;
 import utils.Constants;
 
 public abstract class Corridor implements Operatable {
 	protected Switchable light;
 	protected Switchable ac;
+	protected List<Switchable> devices = new ArrayList<>();
 
 	public Corridor(Switchable light, Switchable ac) {
 		super();
 		this.light = light;
 		this.ac = ac;
+		devices.add(this.light);
+		devices.add(this.ac);
 	}
 
 	public void deviceOn(String type) {
@@ -47,6 +53,16 @@ public abstract class Corridor implements Operatable {
 			break;
 		}
 		return state;
+	}
+	
+	public Integer devicePowerConsumption() {
+		Integer totalConsumption = 0;
+		
+		for(Switchable device : devices) {
+			totalConsumption += device.powerConsumption();
+		}
+		
+		return totalConsumption;
 	}
 
 }
