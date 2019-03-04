@@ -3,6 +3,17 @@ package components;
 import java.util.HashMap;
 import java.util.Map;
 
+import corridors.Corridor;
+import corridors.MainCorridor;
+import corridors.Operatable;
+import devices.AC;
+import devices.Device;
+import devices.Light;
+import floors.Floor;
+import utils.Constants;
+import utils.Formatter;
+import utils.Message;
+
 public class Controller {
 	public Map<Integer, Floor> initialize(String input) {
 		Map<Integer, Floor> floors = new HashMap<>();

@@ -1,4 +1,4 @@
-package components;
+package devices;
 
 public class AC extends Device {
 }

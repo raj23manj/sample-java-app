@@ -1,4 +1,4 @@
-package components;
+package corridors;
 
 public interface Operatable {
 	public void deviceOn(String type);

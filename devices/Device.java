@@ -1,4 +1,4 @@
-package components;
+package devices;
 
 public abstract class Device implements Switchable {
 	protected Boolean state;

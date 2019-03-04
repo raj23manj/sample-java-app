@@ -1,7 +1,11 @@
-package components;
+package floors;
 
 import java.util.HashMap;
 import java.util.Map;
+
+import corridors.Operatable;
+import utils.Constants;
+import utils.Formatter;
 
 public class Floor implements Status<String, Integer> {
 

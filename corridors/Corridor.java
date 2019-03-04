@@ -1,4 +1,7 @@
-package components;
+package corridors;
+
+import devices.Switchable;
+import utils.Constants;
 
 public abstract class Corridor implements Operatable {
 	protected Switchable light;

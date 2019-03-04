@@ -1,7 +1,9 @@
-package components;
+package utils;
 
 import java.util.HashMap;
 import java.util.Map;
+
+import corridors.Operatable;
 
 public class Message implements Formatter {
 	@Override

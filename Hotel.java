@@ -2,8 +2,8 @@ import java.util.List;
 import java.util.Map;
 
 import components.Controller;
-import components.FileReader;
-import components.Floor;
+import floors.Floor;
+import utils.FileReader;
 
 public class Hotel {
 	public static void main(String args[]) {

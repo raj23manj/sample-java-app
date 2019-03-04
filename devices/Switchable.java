@@ -1,4 +1,4 @@
-package components;
+package devices;
 
 public interface Switchable {
 	public void turnOn();

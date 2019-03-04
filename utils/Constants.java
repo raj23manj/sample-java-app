@@ -1,14 +1,11 @@
-package components;
+package utils;
 
 public final class Constants {
+	// corridor related
 	public final static String MAIN_CORRIDOR="mainCorridor";
 	public final static String SUB_CORRIDOR="subCorridor";
-	public final static String ON="ON";
-	public final static String OFF="OFF";
 	public final static String TYPE="type";
 	public final static String CORRIDOR_NO="corridorNo";
-	public final static String LIGHT_STATUS="lightStatus";
-	public final static String AC_STATUS="acStatus";
 	public final static String MAIN="Main";
 	public final static String SUB="Sub";
 	
@@ -19,4 +16,10 @@ public final class Constants {
 	// devices
 	public final static String AC="AC";
 	public final static String LIGHT="Light";
+	public final static String LIGHT_STATUS="lightStatus";
+	public final static String AC_STATUS="acStatus";
+	
+	// states
+	public final static String ON="ON";
+	public final static String OFF="OFF";
 }
