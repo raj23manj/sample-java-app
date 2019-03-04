@@ -19,7 +19,7 @@ public class Hotel {
 			if (i == 0) {
 				// the first line is the hotel initialization
 				floors = ctrl.initialize(inputs.get(i));
-				
+
 			} else {
 				// the rest of the lines are inputs from motion sensor detected output
 				floors = ctrl.updateStates(inputs.get(i), floors);
@@ -28,5 +28,5 @@ public class Hotel {
 			System.out.println("####################################" + "\n");
 		}
 	}
-	
+
 }

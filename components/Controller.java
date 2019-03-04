@@ -32,6 +32,8 @@ public class Controller {
 		});
 	}
 
+	// Update the states based on the corridor type passed from the input
+	// file(Sub/Main)
 	public Map<Integer, Floor> updateStates(String input, Map<Integer, Floor> floors) {
 
 		String[] inputArr = splitString(input);
@@ -74,6 +76,7 @@ public class Controller {
 		return s.split(" - ");
 	}
 
+	// generic code to initialize the corridor based on the type passed(Sub/Main)
 	private Map<Integer, Operatable> intializeCorridors(Integer corridorCount, String type) {
 		Map<Integer, Operatable> corridors = new HashMap<>();
 		for (Integer j = 1; j <= corridorCount; j++) {
@@ -82,6 +85,7 @@ public class Controller {
 			Device acCorridor = new AC();
 
 			acCorridor.turnOn();
+			// by default keeping light in main corridor on and off at sub-corridors
 			if (type == Constants.MAIN) {
 				lightCorridor.turnOn();
 			} else {
@@ -93,5 +97,4 @@ public class Controller {
 		}
 		return corridors;
 	}
-
 }
