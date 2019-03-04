@@ -7,4 +7,4 @@ InputFormat
 		Floor - MainCorridor - SubCorridor
 		
 	Sensor Input Format	for the program:
-		Movement(true|false) - FloorNumber - CorridorType - CorridorNumber
+		Movement(true|false) - FloorNumber - CorridorType(Sub|Main) - CorridorNumber

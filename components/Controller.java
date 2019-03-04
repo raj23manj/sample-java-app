@@ -50,21 +50,21 @@ public class Controller {
 		if (movement == true) {
 			// set state to off of ac's
 			for (Map.Entry<Integer, Operatable> corridor : corridors.entrySet()) {
-				corridor.getValue().acOff();
+				corridor.getValue().deviceOff(Constants.AC);
 			}
 			// get which corridor
 			currentCorridor = corridors.get(corridorNumber);
-			currentCorridor.lightOn();
-			currentCorridor.acOn();
+			currentCorridor.deviceOn(Constants.LIGHT);
+			currentCorridor.deviceOn(Constants.AC);
 		} else {
 
 			// set state to on of ac's
 			for (Map.Entry<Integer, Operatable> corridor : corridors.entrySet()) {
-				corridor.getValue().acOn();
+				corridor.getValue().deviceOn(Constants.AC);
 			}
 			// get which corridor
 			currentCorridor = corridors.get(corridorNumber);
-			currentCorridor.lightOff();
+			currentCorridor.deviceOff(Constants.LIGHT);
 		}
 
 		return floors;

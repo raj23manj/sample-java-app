@@ -15,4 +15,8 @@ public final class Constants {
 	// Output Messages
 	public final static String MESSAGE_1 = "Floor %d  \n";
 	public final static String MESSAGE_2 = "%s Corridor %d Light %d : %s AC : %s \n";
+	
+	// devices
+	public final static String AC="AC";
+	public final static String LIGHT="Light";
 }

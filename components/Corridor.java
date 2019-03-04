@@ -10,28 +10,40 @@ public abstract class Corridor implements Operatable {
 		this.ac = ac;
 	}
 
-	public void lightOn() {
-		light.turnOn();
+	public void deviceOn(String type) {
+		switch (type) {
+		case Constants.AC:
+			ac.turnOn();
+			break;
+		case Constants.LIGHT:
+			light.turnOn();
+			break;
+		}
 	}
 
-	public void lightOff() {
-		light.turnOff();
+	public void deviceOff(String type) {
+		switch (type) {
+		case Constants.AC:
+			ac.turnOff();
+			break;
+		case Constants.LIGHT:
+			light.turnOff();
+			break;
+		}
 	}
 
-	public Boolean lightState() {
-		return light.getState();
-	}
-
-	public void acOn() {
-		ac.turnOn();
-	}
-
-	public void acOff() {
-		ac.turnOff();
-	}
-
-	public Boolean acState() {
-		return ac.getState();
+	public Boolean deviceState(String type) {
+		Boolean state = null;
+		
+		switch (type) {
+		case Constants.AC:
+			state = ac.getState();
+			break;
+		case Constants.LIGHT:
+			state = light.getState();
+			break;
+		}
+		return state;
 	}
 
 }

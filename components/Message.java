@@ -11,8 +11,8 @@ public class Message implements Formatter {
 		{
 			corridorParameters.put(Constants.TYPE, type);
 			corridorParameters.put(Constants.CORRIDOR_NO, corridor.getKey());
-			corridorParameters.put(Constants.LIGHT_STATUS, onOrOffStatus(corridor.getValue().lightState()));
-			corridorParameters.put(Constants.AC_STATUS, onOrOffStatus(corridor.getValue().acState()));
+			corridorParameters.put(Constants.LIGHT_STATUS, onOrOffStatus(corridor.getValue().deviceState(Constants.LIGHT)));
+			corridorParameters.put(Constants.AC_STATUS, onOrOffStatus(corridor.getValue().deviceState(Constants.AC)));
 			status = getFormattedMessages(status, corridorParameters); 
 		}
 		
