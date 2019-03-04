@@ -11,12 +11,14 @@ public class FileReader {
 	public List<String> readFile() {
 
 		List<String> inputs = new ArrayList<>();
+		Scanner sc = null;
+
 		// get current relative path
-		Path currentRelativePath = Paths.get("");
-		String s = currentRelativePath.toAbsolutePath().toString();
+		String s = getCurrentRelativePath();
+		
 		// file to be read
 		File file = new File(s + "/input.txt");
-		Scanner sc = null;
+		
 		try {
 			sc = new Scanner(file);
 		} catch (FileNotFoundException e) {
@@ -28,5 +30,10 @@ public class FileReader {
 			inputs.add(readValue);
 		}
 		return inputs;
+	}
+	
+	private String getCurrentRelativePath() {
+		Path currentRelativePath = Paths.get("");
+		return currentRelativePath.toAbsolutePath().toString();
 	}
 }
