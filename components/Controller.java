@@ -14,6 +14,7 @@ import utils.Constants;
 import utils.Formatter;
 import utils.Message;
 
+// Main Controller Class
 public class Controller {
 	public Map<Integer, Floor> initialize(String input) {
 		Map<Integer, Floor> floors = new HashMap<>();
