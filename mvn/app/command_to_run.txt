@@ -1,0 +1,4 @@
+* "cd" in to the folder
+$ cd location-of-app/app
+$ mvn clean package
+$ java -jar target/app-0.0.1-SNAPSHOT.jar

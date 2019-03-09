@@ -1,0 +1,29 @@
+package com.hotel_management.app.corridors;
+
+public class Corridor implements Operatable {
+
+	@Override
+	public void deviceOn(String type) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void deviceOff(String type) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public Boolean deviceState(String type) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Integer devicePowerConsumption() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

@@ -1,0 +1,5 @@
+package com.hotel_management.app.utils;
+
+public class Message {
+
+}

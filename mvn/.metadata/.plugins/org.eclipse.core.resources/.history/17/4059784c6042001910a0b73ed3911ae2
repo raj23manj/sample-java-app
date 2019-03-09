@@ -1,0 +1,29 @@
+package com.hotel_management.app.devices;
+
+public abstract class Device implements Switchable {
+
+	@Override
+	public void turnOn() {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void turnOff() {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public Boolean getState() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Integer powerConsumption() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

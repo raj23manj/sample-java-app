@@ -1,0 +1,10 @@
+package com.hotel_management.app.utils;
+
+import java.util.Map;
+
+
+
+public interface Formatter {
+	public String setArgumentsAndFormat(String status, Map<Integer, Operatable> corridors, String type);
+}
+

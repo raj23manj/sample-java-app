@@ -1,0 +1,53 @@
+Input Value: 2 - 1 - 2
+
+Floor 1  
+Main Corridor 1 Light 1 : ON AC : ON 
+Sub Corridor 1 Light 1 : OFF AC : ON 
+Sub Corridor 2 Light 2 : OFF AC : ON 
+
+Floor 2  
+Main Corridor 1 Light 1 : ON AC : ON 
+Sub Corridor 1 Light 1 : OFF AC : ON 
+Sub Corridor 2 Light 2 : OFF AC : ON 
+
+total power Consumed on floor1 : 35
+
+total power Consumed on floor2 : 35
+
+####################################
+
+Input Value: true - 1 - Sub - 2
+
+Floor 1  
+Main Corridor 1 Light 1 : ON AC : ON 
+Sub Corridor 1 Light 1 : OFF AC : OFF 
+Sub Corridor 2 Light 2 : ON AC : ON 
+
+Floor 2  
+Main Corridor 1 Light 1 : ON AC : ON 
+Sub Corridor 1 Light 1 : OFF AC : ON 
+Sub Corridor 2 Light 2 : OFF AC : ON 
+
+total power Consumed on floor1 : 30
+
+total power Consumed on floor2 : 35
+
+####################################
+
+Input Value: false - 1 - Sub - 2
+
+Floor 1  
+Main Corridor 1 Light 1 : ON AC : ON 
+Sub Corridor 1 Light 1 : OFF AC : ON 
+Sub Corridor 2 Light 2 : OFF AC : ON 
+
+Floor 2  
+Main Corridor 1 Light 1 : ON AC : ON 
+Sub Corridor 1 Light 1 : OFF AC : ON 
+Sub Corridor 2 Light 2 : OFF AC : ON 
+
+total power Consumed on floor1 : 35
+
+total power Consumed on floor2 : 35
+
+####################################

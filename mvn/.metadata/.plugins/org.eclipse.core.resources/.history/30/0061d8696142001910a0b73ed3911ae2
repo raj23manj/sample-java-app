@@ -1,0 +1,5 @@
+package com.hotel_management.app.floors;
+
+public class Floor implements Status<T, U> {
+
+}
